@@ -30,3 +30,19 @@ const createFeedback = (gradeFn) => (student) => {
 const studentFeedback = studentGrades.map(createFeedback(getGradeInfo));
 console.log("Student Feedback:", studentFeedback);
 
+
+
+// 2. Rambda Verwendung
+
+const strings = ["Apfel", "Banane", "Birne"];
+
+// Curry Funktion mit Ramda erstellen
+const addPrefix = R.curry((prefix, str) => prefix + str);
+
+// Partial Application: Ich übergebe nur den ersten Parameter ("Lecker "). Das Ergebnis 'addLecker' ist eine Funktion die nur noch den String erwartet.
+const addLecker = addPrefix("Lecker ");
+
+// Verwendung in map: Ich muss einfach nur 'addLecker' keinen weiteren Parameter mehr mitgeben da der map den aktuellen Wert als Argument übergibt.
+const leckereFruechte = strings.map(addLecker);
+console.log("Mit Präfix:", leckereFruechte);
+
