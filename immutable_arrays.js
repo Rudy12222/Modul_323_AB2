@@ -4,3 +4,8 @@ const items = [
     { id: 2, name: "Artikel B", price: 20.0 }
 ];
 console.log("Ursprüngliches Array:", items);
+
+
+// 2. Neues Array mit zusätzlichem Element
+const newItems = [...items, { id: 3, name: "Artikel C", price: 5.0 }];
+console.log("Array mit neuem Element:", newItems);
