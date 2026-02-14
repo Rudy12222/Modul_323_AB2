@@ -15,3 +15,9 @@ console.log("Ursprüngliches Objekt:", user);
 // also ich nutze einen Spread Operator um eine Kopie zu erstellen und die neue Eingenschaft anzuhägnen
 const userWithEmail = { ...user, email: "max@example.com" };
 console.log("Objekt mit neuer Eigenschaft:", userWithEmail);
+
+
+// 4. Eigenschaft verändern
+// Ich erstelle wieder eine Kopie und überschreibe dennn  Wert
+const userWithNewAge = { ...user, age: 26 };
+console.log("Objekt mit veränderter Eigenschaft:", userWithNewAge);
