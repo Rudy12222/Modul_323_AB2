@@ -21,3 +21,10 @@ console.log("Objekt mit neuer Eigenschaft:", userWithEmail);
 // Ich erstelle wieder eine Kopie und überschreibe dennn  Wert
 const userWithNewAge = { ...user, age: 26 };
 console.log("Objekt mit veränderter Eigenschaft:", userWithNewAge);
+
+
+
+// 5. Eigenschaft entfernen 
+// Ich nutze Destrukturierung damit die Eigenschaft 'city' herauszulösen. 'restUser' enthält den Rest.
+const { city, ...userWithoutCity } = user;
+console.log("Objekt ohne Eigenschaft 'city':", userWithoutCity);
