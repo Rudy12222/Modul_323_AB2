@@ -46,3 +46,29 @@ const addLecker = addPrefix("Lecker ");
 const leckereFruechte = strings.map(addLecker);
 console.log("Mit Präfix:", leckereFruechte);
 
+
+// 3. Impure zu Pure
+
+// Impure Funktion: Side Effect (schreibt in eine Variable ausserhalb der Funktion und console.log)
+let lastLength = 0;
+
+const getArrayLengthImpure = (arr) => {
+    lastLength = arr.length; // Side Effect: globaler Zustand wird verändert
+    console.log("Letzte Länge:", lastLength); 
+    return lastLength;
+};
+
+// Pure Funktion: keine Side Effects es gibt nur die Länge zurück
+const getArrayLengthPure = (arr) => {
+    return arr.length;
+};
+
+// Aufrufe zum Testen
+const testArray1 = [1, 2, 3];
+const testArray2 = ["a", "b", "c", "d"];
+
+console.log("Impure 1:", getArrayLengthImpure(testArray1));
+console.log("Impure 2:", getArrayLengthImpure(testArray2));
+
+console.log("Pure 1:", getArrayLengthPure(testArray1));
+console.log("Pure 2:", getArrayLengthPure(testArray2));
